@@ -53,8 +53,8 @@ variable "key_name" {
   default     = "my-keypair"
 }
 
-variable "public_key" {
-  description = "SSH public key content"
+variable "ssh_public_key" {
+  description = "SSH public key for EC2 instances"
   type        = string
-  default     = ""
+  sensitive   = true
 }
