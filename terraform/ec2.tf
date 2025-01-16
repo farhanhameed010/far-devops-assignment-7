@@ -46,6 +46,10 @@ resource "aws_key_pair" "deployer" {
   key_name   = var.key_name
   public_key = var.ssh_public_key
 
+  lifecycle {
+    create_before_destroy = true
+  }
+
   tags = {
     Name        = "${var.environment}-keypair"
     Environment = var.environment
